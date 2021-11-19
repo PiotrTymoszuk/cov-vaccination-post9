@@ -92,6 +92,20 @@
                      w = 180, 
                      h = 180)
   
+# Figure 7: residuals -----
+  
+  figures$resids <- plots$country_resid[c('case_plots_test', 
+                                          'fatal_plots_test')] %>% 
+    map(~.x$Austria + theme(legend.position = 'none')) %>% 
+    plot_grid(plotlist = ., 
+              ncol = 2, 
+              align = 'hv', 
+              labels = LETTERS, 
+              label_size = 10) %>% 
+    as_figure_object(figure_label = 'figure_7_resid', 
+                     w = 180, 
+                     h = 90)
+  
 # Saving -----
   
   figures %>%
